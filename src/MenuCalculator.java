@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class MenuCalculator {
+public class MenuCalculator  implements AutoCloseable{
 
     private final Scanner scanner = new Scanner(System.in);
 
@@ -151,6 +151,10 @@ public class MenuCalculator {
         System.out.println("5. Exit");
         System.out.print("Choice: ");
 
+    }
+    @Override
+    public void close()  {
+        scanner.close();
     }
 
 }
