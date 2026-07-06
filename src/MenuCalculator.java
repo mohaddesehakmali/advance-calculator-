@@ -68,11 +68,9 @@ public class MenuCalculator  implements AutoCloseable{
 
         try {
 
-            System.out.print("First number: ");
-            double a = scanner.nextDouble();
+            double a = getInput("First number: ");
 
-            System.out.print("Second number: ");
-            double b = scanner.nextDouble();
+            double b = getInput("Second number: ");
 
             System.out.print("Operator (+ - * / %): ");
             String sign = scanner.next();
@@ -89,6 +87,11 @@ public class MenuCalculator  implements AutoCloseable{
 
         }
 
+    }
+
+     double getInput(String message) {
+        System.out.print(message);
+        return scanner.nextDouble();
     }
 
     private void advancedCalculator() {
